@@ -1,0 +1,82 @@
+My Grocery List
+    0:  "",  "",  "eggs",  0
+    1:  "",  "",  "milk",  0
+    2:  "",  "",  "hot dogs",  0
+    3:  "",  "",  "bread",  0
+
+My roommate's Grocery List
+    0:  "",  "Ruffles",  "potato chips",  0
+    1:  "",  "Frito Lays",  "potato chips",  0
+    2:  "",  "Bud Lite",  "beer",  0
+    3:  "",  "",  "eggs",  0
+    4:  "",  "",  "pretzels",  0
+
+Combined Grocery Lists
+    0:  "",  "",  "eggs",  0
+    1:  "",  "",  "milk",  0
+    2:  "",  "",  "hot dogs",  0
+    3:  "",  "Lakes 'Ole",  "butter",  0
+    4:  "",  "",  "bread",  0
+    5:  "",  "",  "bananas",  0
+    6:  "",  "",  "apples",  0
+    7:  "",  "Ruffles",  "potato chips",  0
+    8:  "",  "Frito Lays",  "potato chips",  0
+    9:  "",  "",  "pretzels",  0
+
+
+Expected results:
+    0:  "",  "",  "eggs",  0
+    1:  "",  "",  "milk",  0
+    2:  "",  "",  "hot dogs",  0
+    3:  "",  "Lakes 'Ole",  "butter",  0
+    4:  "",  "",  "bread",  0
+    5:  "",  "",  "bananas",  0
+    6:  "",  "",  "apples",  0
+    7:  "",  "Ruffles",  "potato chips",  0
+    8:  "",  "Frito Lays",  "potato chips",  0
+    9:  "",  "",  "pretzels",  0
+
+
+Actual results:  
+    0:  "",  "",  "eggs",  0
+    1:  "",  "",  "milk",  0
+    2:  "",  "",  "hot dogs",  0
+    3:  "",  "Lakes 'Ole",  "butter",  0
+    4:  "",  "",  "bread",  0
+    5:  "",  "",  "bananas",  0
+    6:  "",  "",  "apples",  0
+    7:  "",  "Ruffles",  "potato chips",  0
+    8:  "",  "Frito Lays",  "potato chips",  0
+    9:  "",  "",  "pretzels",  0
+
+
+Test results:    PASS
+Riley's Grocery List
+    0:  "",  "",  "dr pepper",  0
+    1:  "",  "Boom Chicka Pop",  "popcorn",  0
+    2:  "",  "Dum Dums",  "lolipops",  0
+    3:  "",  "Stacys",  "pita chips",  0
+
+Ryder's Grocery List
+    0:  "",  "Stacys",  "pita chips",  0
+    1:  "",  "Lipton",  "green tea",  0
+    2:  "",  "Natural Light",  "beer",  0
+
+Costco's Food Run
+    0:  "",  "",  "hotdog",  0
+    1:  "",  "",  "chicken bake",  0
+    2:  "",  "",  "cookie",  0
+
+Riley and Ryders Shopping Spree
+    0:  "",  "",  "hotdog",  0
+    1:  "",  "",  "chicken bake",  0
+    2:  "",  "",  "cookie",  0
+    3:  "",  "",  "dr pepper",  0
+    4:  "",  "",  "fruit gushers",  0
+    5:  "",  "Boom Chicka Pop",  "popcorn",  0
+    6:  "",  "Dum Dums",  "lolipops",  0
+    7:  "",  "Popcorners",  "kettle corn",  0
+    8:  "",  "Stacys",  "pita chips",  0
+    9:  "",  "Lipton",  "green tea",  0
+   10:  "",  "Hersheys",  "candy bar",  0
+
