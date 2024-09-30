@@ -1,0 +1,27 @@
+     1                                 %line 1+1 subtraction.asm
+     2                                 
+     3                                 
+     4                                 
+     5                                 
+     6                                 
+     7                                 
+     8                                 [section .data]
+     9                                 SYS_exit equ 60
+    10                                 EXIT_SUCCESS equ 0
+    11 00000000 3412                   num1 dw 0x1234
+    12 00000002 DCFE                   num2 dw 0xFEDC
+    13 00000004 00000000               dif dd 0
+    14                                 
+    15                                 [section .text]
+    16                                 [global _start]
+    17                                 _start:
+    18 00000000 8B0425[00000000]        mov eax, dword[num1]
+    19 00000007 2B0425[00000000]        sub eax, dword[num2]
+    20 0000000E 83DA00                  sbb edx, 0
+    21                                 
+    22 00000011 890425[00000000]        mov [dif], eax
+    23 00000018 891425[02000000]        mov [dif+2], edx
+    24                                 
+    25 0000001F 48C7C03C000000          mov rax, SYS_exit
+    26 00000026 48C7C700000000          mov rdi, EXIT_SUCCESS
+    27 0000002D 0F05                    syscall
