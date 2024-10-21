@@ -1,0 +1,45 @@
+     1                                 %line 1+1 multiple.asm
+     2                                 
+     3                                 
+     4                                 
+     5                                 
+     6                                 
+     7                                 [section .data]
+     8                                 SYS_exit equ 60
+     9                                 EXIT_SUCCESS equ 0
+    10 00000000 FFFF                   num dw 65535
+    11 00000002 0000                   mul_3 dw 0
+    12 00000004 0000                   other dw 0
+    13                                 
+    14                                 [section .text]
+    15                                 [global _start]
+    16                                 _start:
+    17 00000000 668B0425[00000000]      mov ax, [num]
+    18                                 
+    19 00000008 66BB0300                mov bx, 3
+    20 0000000C 6631D2                  xor dx, dx
+    21 0000000F 66F7F3                  div bx
+    22 00000012 6683FA00                cmp dx, 0
+    23 00000016 752B                    jne increment_other
+    24                                 
+    25 00000018 668B0425[00000000]      mov ax, [num]
+    26 00000020 66BB0500                mov bx, 5
+    27 00000024 6631D2                  xor dx, dx
+    28 00000027 66F7F3                  div bx
+    29 0000002A 6683FA00                cmp dx, 0
+    30 0000002E 7413                    je increment_other
+    31                                 
+    32 00000030 668B0425[00000000]      mov ax, [mul_3]
+    33 00000038 66FFC0                  inc ax
+    34 0000003B 66890425[00000000]      mov [mul_3], ax
+    35 00000043 EB11                    jmp exit
+    36                                 
+    37                                 increment_other:
+    38 00000045 668B0425[00000000]      mov ax, [other]
+    39 0000004D 66FFC0                  inc ax
+    40 00000050 66890425[00000000]      mov [other], ax
+    41                                 
+    42                                 exit:
+    43 00000058 48C7C03C000000          mov rax, SYS_exit
+    44 0000005F 48C7C700000000          mov rdi, EXIT_SUCCESS
+    45 00000066 0F05                    syscall

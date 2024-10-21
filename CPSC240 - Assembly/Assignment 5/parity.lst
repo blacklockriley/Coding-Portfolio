@@ -1,0 +1,45 @@
+     1                                 %line 1+1 parity.asm
+     2                                 
+     3                                 
+     4                                 
+     5                                 
+     6                                 
+     7                                 
+     8                                 
+     9                                 
+    10                                 
+    11                                 
+    12                                 
+    13                                 [section .data]
+    14                                 SYS_exit equ 60
+    15                                 EXIT_SUCCESS equ 0
+    16 00000000 0C00EB038F19686015-    array dw 12, 1003, 6543, 24680, 789, 30123, 32766
+    17 00000000 03AB75FE7F         
+    18 0000000E 0000<rept>             even times 7 dw 0
+    19                                 
+    20                                 [section .text]
+    21                                 [global _start]
+    22                                 _start:
+    23 00000000 48C7C600000000          mov rsi, 0
+    24 00000007 48C7C700000000          mov rdi, 0
+    25                                 
+    26                                 .loop:
+    27 0000000E 4883FE07                cmp rsi, 7
+    28 00000012 7D1C                    jge .exit
+    29                                 
+    30 00000014 668B8436[00000000]      mov ax, [array + rsi*2]
+    31                                 
+    32 0000001C 66A90100                test ax, 1
+    33 00000020 7509                    jnz .not_even
+    34                                 
+    35 00000022 6689843F[00000000]      mov [even + rdi*2], ax
+    36 0000002A 48FFC7                  inc rdi
+    37                                 
+    38                                 .not_even:
+    39 0000002D 48FFC6                  inc rsi
+    40 00000030 EBDA                    jmp .loop
+    41                                 
+    42                                 .exit:
+    43 00000032 B83C000000              mov eax, SYS_exit
+    44 00000037 31FF                    xor edi, edi
+    45 00000039 0F05                    syscall

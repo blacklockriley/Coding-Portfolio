@@ -1,0 +1,3 @@
+The quick brown fox jumps over the lazy dog.
+This is a test file for use with the CPSC 223C midterm test.
+Here the intent is that every letter of the English alphabet will appear at least once.

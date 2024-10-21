@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<indexing>
+ <object alt="" name="Image1" object_type="graphic"/>
+ <object alt="" name="Image2" object_type="graphic"/>
+ <paragraph index="19" node_type="writer">CPSC 240: Computer Organization and Assembly Language</paragraph>
+ <paragraph index="20" node_type="writer">Assignment 04, Fall Semester 2024</paragraph>
+ <paragraph index="21" node_type="writer">CWID: 885024539  Name: Riley Blacklock</paragraph>
+ <paragraph index="23" node_type="writer">Programming:</paragraph>
+ <paragraph index="24" node_type="writer">Download the “CPSC-240 Assignment04.docx” document.</paragraph>
+ <paragraph index="25" node_type="writer">Design &quot;multiple.asm&quot; program to implement an if-else structure in assembly language, and use assembly language to realize the function of the following C++ instructions. NOTE: variable sizes and program functions should be equivalent to C/C++ instructions.
+unsigned short num = 65535; 	// use dw to declare 16-bit variable
+unsigned short mul_3 = 0, other = 0; 	// use dw to declare 16-bit variable
+if(num % 3 == 0 &amp;&amp; num % 5 != 0) {
+    mul_3++;
+} else {
+    other++;
+}</paragraph>
+ <paragraph index="26" node_type="writer">Assemble the &quot;multiple.asm&quot; file and link the &quot;multiple.o&quot; file to get the &quot;multiple&quot; executable file.</paragraph>
+ <paragraph index="27" node_type="writer">Run the &quot;multiple&quot; file with the GDB debugger to display the memory of num, as well as the simulation results of mul_3 and other.</paragraph>
+ <paragraph index="28" node_type="writer">Insert source code (multiple.asm) and simulation results (GDB window) of the memory (num, mul_3, and other) in the document. Write an analysis to verify simulation results.</paragraph>
+ <paragraph index="29" node_type="writer">Save the file in pdf format and submit the pdf file to Canvas before the deadline.</paragraph>
+ <paragraph index="31" node_type="writer">[Insert multiple.asm source code here]</paragraph>
+ <paragraph index="32" node_type="writer">; multiple.asm;</paragraph>
+ <paragraph index="33" node_type="writer">; unsigned short num = 65535;</paragraph>
+ <paragraph index="34" node_type="writer">; unsigned short mul_3 = 0, other = 0;</paragraph>
+ <paragraph index="35" node_type="writer">; if(num % 3 == 0 &amp;&amp; num % 5 != 0) { mul_3++; } else { other++; };</paragraph>
+ <paragraph index="37" node_type="writer">section .data</paragraph>
+ <paragraph index="38" node_type="writer">SYS_exit	equ 60</paragraph>
+ <paragraph index="39" node_type="writer">EXIT_SUCCESS	equ 0</paragraph>
+ <paragraph index="40" node_type="writer">num		dw 65535</paragraph>
+ <paragraph index="41" node_type="writer">mul_3		dw 0</paragraph>
+ <paragraph index="42" node_type="writer">other		dw 0</paragraph>
+ <paragraph index="44" node_type="writer">section .text</paragraph>
+ <paragraph index="45" node_type="writer">    global _start</paragraph>
+ <paragraph index="46" node_type="writer">_start:</paragraph>
+ <paragraph index="47" node_type="writer">	mov	ax, [num]</paragraph>
+ <paragraph index="48" node_type="writer">	mov	bx, 3</paragraph>
+ <paragraph index="49" node_type="writer">	xor	dx, dx</paragraph>
+ <paragraph index="50" node_type="writer">	div	bx</paragraph>
+ <paragraph index="51" node_type="writer">	cmp	dx, 0</paragraph>
+ <paragraph index="52" node_type="writer">	jne	increment_other</paragraph>
+ <paragraph index="53" node_type="writer">	mov	ax, [num]</paragraph>
+ <paragraph index="54" node_type="writer">	mov	bx, 5</paragraph>
+ <paragraph index="55" node_type="writer">	xor	dx, dx</paragraph>
+ <paragraph index="56" node_type="writer">	div	bx</paragraph>
+ <paragraph index="57" node_type="writer">	cmp	dx, 0</paragraph>
+ <paragraph index="58" node_type="writer">	je	increment_other</paragraph>
+ <paragraph index="59" node_type="writer">	mov	ax, [mul_3]</paragraph>
+ <paragraph index="60" node_type="writer">	inc	ax</paragraph>
+ <paragraph index="61" node_type="writer">	mov	[mul_3], ax</paragraph>
+ <paragraph index="62" node_type="writer">	jmp	exit</paragraph>
+ <paragraph index="64" node_type="writer">increment_other:</paragraph>
+ <paragraph index="65" node_type="writer">	mov	ax, [other]</paragraph>
+ <paragraph index="66" node_type="writer">	inc	ax</paragraph>
+ <paragraph index="67" node_type="writer">	mov	[other], ax</paragraph>
+ <paragraph index="69" node_type="writer">exit:</paragraph>
+ <paragraph index="70" node_type="writer">	mov	rax, SYS_exit</paragraph>
+ <paragraph index="71" node_type="writer">	mov	rdi, EXIT_SUCCESS</paragraph>
+ <paragraph index="72" node_type="writer">	syscall</paragraph>
+ <paragraph index="75" node_type="writer">[Insert multiple simulation result here]</paragraph>
+ <paragraph index="76" node_type="writer">num = 65535</paragraph>
+ <paragraph index="77" node_type="writer">mul_3 = 0</paragraph>
+ <paragraph index="78" node_type="writer">other = 1</paragraph>
+ <paragraph index="79" node_type="writer">[Insert the simulation result verification here]</paragraph>
+ <paragraph index="80" node_type="writer">num = 65535</paragraph>
+ <paragraph index="82" node_type="writer">mul_3 = 0</paragraph>
+ <paragraph index="84" node_type="writer">other = 1</paragraph>
+</indexing>

@@ -1,0 +1,10 @@
+C language was invented in 1970.
+The founders wer Kerigan and Ritchie.
+They worked at Bell Labs
+At that time they used a Unix
+machine to test C programs
+Now a C compiler and linker are distributed with each copy of a Linux operating system.
+The C compiler produced by the GNU organization is called gcc.
+The GNU C compiler is
+distributed with each Linux OS.
+C is the main language of “Systems Programming”.
