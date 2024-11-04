@@ -1,0 +1,2 @@
+Compile: yasm -g dwarf2 -f elf64 hello.asm -l hello.lst
+Link: ld -g -o hello hello.o
