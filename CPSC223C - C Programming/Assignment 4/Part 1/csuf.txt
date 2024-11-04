@@ -1,0 +1,42 @@
+Freddy Johnson
+3578
+Geology
+Junior
+7147336587
+212.75
+92873
+Alice Smith
+1234
+Computer Science
+Sophomore
+1234567890
+150.50
+90210
+John Doe
+5678
+Mathematics
+Senior
+9876543210
+100.00
+12345
+Jane Roe
+9101
+Physics
+Freshman
+5555555555
+200.00
+67890
+Tom Brown
+1121
+Chemistry
+Junior
+4444444444
+175.25
+54321
+Emily White
+3141
+Biology
+Senior
+3333333333
+180.75
+98765
